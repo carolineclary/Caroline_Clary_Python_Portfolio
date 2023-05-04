@@ -1,5 +1,5 @@
-# Python_Portfolio
-This is the portfolio of python code that I learned during BISC 450C!
+# Caroline_Clary_Python_Portfolio
+This is the portfolio of python code that I learned during BISC 450C! Overall, I really enjoyed this course and am excited to take what I learned with me into other areas of my life and education.
 
 
 ## Analyzing Patient Data
