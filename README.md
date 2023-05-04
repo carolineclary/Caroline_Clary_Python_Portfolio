@@ -406,8 +406,8 @@ len(df.profit[non_numeric_profits])
 bin_sizes, _, _ = plt.hist(df.year[non_numeric_profits], bins= range(1955, 2006))
 ```
 
+![output_11_0](https://user-images.githubusercontent.com/132538541/236327430-47e5d466-8245-4163-9117-ce1796980eb0.png)
 
-![png](output_11_0.png)
 
 
 
@@ -464,8 +464,7 @@ fig, ax = plt.subplots()
 plot(x, y1, ax, 'Increase in mean Fortune 500 company profits from 1955 to 2005', 'Profits (millions)')
 ```
 
-
-![png](output_16_0.png)
+![output_16_0](https://user-images.githubusercontent.com/132538541/236327597-d8ca9349-195e-4245-8615-3217b38dfa1b.png)
 
 
 
@@ -475,8 +474,7 @@ fig, ax = plt.subplots()
 plot(x, y2, ax, 'Increase in mean Fortune 500 company revenues from 1955 to 2005', 'Revenue (millions)')
 ```
 
-
-![png](output_17_0.png)
+![output_17_0](https://user-images.githubusercontent.com/132538541/236327730-a6816393-26db-4519-a1f5-1707170398ce.png)
 
 
 
@@ -493,6 +491,9 @@ plot_with_std(x, y2.values, stds2, ax2, title % 'revenues', 'Revenue,(millions)'
 fig.set_size_inches(14,4)
 fig. tight_layout()
 ```
+
+![output_18_0](https://user-images.githubusercontent.com/132538541/236328153-9e129c57-f90a-403e-9e50-8d96322b1782.png)
+
 
 
 ## Python Fundamentals
@@ -1099,3 +1100,71 @@ print(len(name))
 ```
 
     3
+
+
+## Using Multiple Files
+
+In this analysis, we learned how to use multiple files in the Python environment. We displayed patients' inflammation data over three clinical trials, and compared the plots between the trials.
+
+```python
+import glob
+```
+
+
+```python
+print(glob.glob('inflammation*.csv'))
+```
+
+    ['inflammation-05.csv', 'inflammation-12.csv', 'inflammation-04.csv', 'inflammation-08.csv', 'inflammation-10.csv', 'inflammation-06.csv', 'inflammation-09.csv', 'inflammation-01.csv', 'inflammation-07.csv', 'inflammation-11.csv', 'inflammation-03.csv', 'inflammation-02.csv']
+
+
+
+```python
+import glob
+import numpy
+import matplotlib.pyplot
+
+filenames = sorted(glob.glob('inflammation*.csv'))
+filenames = filenames[0:3]
+
+for filename in filenames:
+    print(filename)
+    
+    data = numpy.loadtxt(fname=filename, delimiter = ',')
+    
+    fig = matplotlib.pyplot.figure(figsize = (10.0, 3.0))
+    
+    axes1 = fig.add_subplot(1,3,1)
+    axes2 = fig.add_subplot(1,3,2)
+    axes3 = fig.add_subplot(1,3,3)
+    
+    axes1.set_ylabel('average')
+    axes1.plot(numpy.mean(data, axis = 0))
+    
+    axes2.set_ylabel('max')
+    axes2.plot(numpy.amax(data, axis = 0))
+    
+    axes3.set_ylabel('min')
+    axes3.plot(numpy.amin(data, axis = 0))
+    
+    fig.tight_layout()
+    matplotlib.pyplot.show()
+```
+
+    inflammation-01.csv
+
+![output_2_1](https://user-images.githubusercontent.com/132538541/236325982-68d99c60-8abe-438d-a1de-4a1557f85e8e.png)
+
+
+
+    inflammation-02.csv
+    
+![output_2_3](https://user-images.githubusercontent.com/132538541/236326272-827862cc-3158-43c7-9520-86c6a12bfbe7.png)
+
+
+
+    inflammation-03.csv
+    
+ ![output_2_5](https://user-images.githubusercontent.com/132538541/236326368-2baccdc5-6a0c-458b-ab5f-7b59fcf8f770.png)
+
+    
