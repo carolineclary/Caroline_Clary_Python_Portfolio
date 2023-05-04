@@ -226,7 +226,7 @@ print(numpy.mean(data, axis = 1))
 
 ## Using Jupyter Notebooks 1 and 2
 
-In this analysis, we looked into different companies statisitcal values based on thier year, rank, revenue, and profit.
+In this analysis, we looked into different companies statisitcal values based on their year, rank, revenue, and profit.
 
 
 ```python
