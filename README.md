@@ -1296,7 +1296,7 @@ else:
 
 ## Functions
 
-In this four part video we learned how to manipulate data by functions. Functions allow us to bundle a set of instructions that we want to use repeatedly or make complex codes more efficient.
+In this four part video we learned how to manipulate data by functions. Functions allow us to bundle a set of instructions that we want to use repeatedly, or make complex codes more efficient.
 
 ```python
 fahrenheit_val = 99
@@ -1957,4 +1957,111 @@ def std_dev(sample):
         sum_squared_devs += (value - sample_mean) * (value - sample_mean)
         
     return numpy.sqrt(sum_squared_devs / (len(sample) -1))
+```
+
+## Errors
+
+In this lesson we learned how to read and approach errors. We intentionally made mistakes so that we could practice understanding the errors.
+
+```python
+# This code has an intentional error. You can type it directly
+# or use it for reference to understand the error message below.
+
+def favorite_ice_cream():
+    ice_creams = [
+        'chacolate',
+        'vanilla',
+        'strawberry'
+    ]
+    print(ice_cream[3])
+    
+favorite_ice_cream()
+
+```
+
+
+    ---------------------------------------------------------------------------
+
+    NameError                                 Traceback (most recent call last)
+
+    <ipython-input-1-76ce7c727b95> in <module>
+         10     print(ice_cream[3])
+         11 
+    ---> 12 favorite_ice_cream()
+    
+
+    <ipython-input-1-76ce7c727b95> in favorite_ice_cream()
+          8         'strawberry'
+          9     ]
+    ---> 10     print(ice_cream[3])
+         11 
+         12 favorite_ice_cream()
+
+
+    NameError: name 'ice_cream' is not defined
+
+
+
+```python
+def some_function():
+    msg = 'hello, world!'
+    print(msg)
+    return msg
+```
+
+
+```python
+print(a)
+```
+
+
+    ---------------------------------------------------------------------------
+
+    NameError                                 Traceback (most recent call last)
+
+    <ipython-input-5-bca0e2660b9f> in <module>
+    ----> 1 print(a)
+    
+
+    NameError: name 'a' is not defined
+
+
+
+```python
+print('hello')
+```
+
+    hello
+
+
+
+```python
+count = 0
+
+for number in range(10):
+    count = count + number
+print('The count is:', count)
+```
+
+    The count is: 45
+
+
+
+```python
+letters = ['a', 'b', 'c']
+
+print('Letter #1 is', letters[0])
+print('Letter #2 is', letters[1])
+print('Letter #3 is', letters[2])
+#print('Letter #4 is', letters[3])
+```
+
+    Letter #1 is a
+    Letter #2 is b
+    Letter #3 is c
+
+
+
+```python
+file_handle = open('myfile.txt', 'w')
 ```
