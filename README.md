@@ -1373,7 +1373,7 @@ else:
     Minima add up to zero! -> HEALTHY PARTICIPANT ALERT!
 
 
-## Functions
+## Functions (1)
 
 In this four part video we learned how to manipulate data by functions. Functions allow us to bundle a set of instructions that we want to use repeatedly, or make complex codes more efficient.
 
@@ -1509,6 +1509,8 @@ print_temperatures()
 
     Temperature in Fahrenheit was: 212.0
     Temperature in Kelvin was: 373.15
+    
+## Functions (2)
 
 ```python
 import numpy
@@ -1668,7 +1670,7 @@ for filename in filenames:
 
     Suspicious looking maxima!
 
-
+## Functions (3)
 
 ```python
 def offset_mean(data, target_mean_value):
@@ -1792,7 +1794,7 @@ help(offset_mean)
         array([-1., 0., 1.])
     
 
-
+## Functions (4)
 
 ```python
 numpy.loadtxt('inflammation-01.csv', delimiter = ',')
