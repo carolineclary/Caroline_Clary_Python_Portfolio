@@ -634,9 +634,9 @@ print('weight in kilograms is now:', weight_kg)
     weight in kilograms is now: 65.0
 
 
-## Analyzing Patient Data
+## Analyzing Patient Data (1)
 
-In this analysis, we looked at inflammation data for multiple patients.
+In this three part analysis, we looked at inflammation data for multiple patients in a clinical study.
 
 
 ```python
@@ -855,6 +855,85 @@ print(numpy.mean(data, axis = 1))
      5.8   6.425 6.05  6.025 6.175 6.55  6.175 6.35  6.725 6.125 7.075 5.725
      5.925 6.15  6.075 5.75  5.975 5.725 6.3   5.9   6.75  5.925 7.225 6.15
      5.95  6.275 5.7   6.1   6.825 5.975 6.725 5.7   6.25  6.4   7.05  5.9  ]
+
+## Analyzing Patient Data (2 and 3)
+
+```python
+import numpy
+data = numpy.loadtxt(fname= 'inflammation-01.csv', delimiter = ',')
+```
+
+
+```python
+# Heat map of patient inflammation over time
+import matplotlib.pyplot
+image = matplotlib.pyplot.imshow(data)
+matplotlib.pyplot.show()
+```
+
+
+    <Figure size 640x480 with 1 Axes>
+
+
+
+```python
+# Average inflammation over time
+
+ave_inflammation = numpy.mean(data, axis = 0)
+ave_plot = matplotlib.pyplot.plot(ave_inflammation)
+matplotlib.pyplot.show()
+```
+
+![output_2_0](https://github.com/carolineclary/Caroline_Clary_Python_Portfolio/assets/132538541/cc64847b-21e1-415b-a56a-92ed91fea18b)
+
+
+
+
+```python
+max_plot = matplotlib.pyplot.plot(numpy.amax(data, axis = 0))
+matplotlib.pyplot.show()
+```
+
+![output_3_0](https://github.com/carolineclary/Caroline_Clary_Python_Portfolio/assets/132538541/8f92e8db-9e38-4579-9a1e-13e42bef1530)
+
+
+
+
+```python
+min_plot = matplotlib.pyplot.plot(numpy.amin(data, axis = 0))
+matplotlib.pyplot.show()
+```
+
+![output_4_0](https://github.com/carolineclary/Caroline_Clary_Python_Portfolio/assets/132538541/30aab38f-c05b-4527-b19a-7f210bf4b062)
+
+
+
+
+```python
+fig = matplotlib.pyplot.figure(figsize =(10.0, 3.0))
+
+axes1 = fig.add_subplot(1, 3, 1)
+axes2 = fig.add_subplot(1, 3, 2)
+axes3 = fig.add_subplot(1, 3, 3)
+
+axes1.set_ylabel('average')
+axes1.plot(numpy.mean(data, axis = 0))
+
+axes2.set_ylabel('max')
+axes2.plot(numpy.amax(data, axis = 0))
+
+axes3.set_ylabel('min')
+axes3.plot(numpy.amin(data, axis = 0))
+
+fig.tight_layout()
+
+matplotlib.pyplot.savefig('inflammation.png')
+matplotlib.pyplot.show()
+
+
+```
+
+![output_5_0](https://github.com/carolineclary/Caroline_Clary_Python_Portfolio/assets/132538541/d79b163a-b9ad-4070-b300-ec25daf63488)
 
 
 ## Storing Values in Lists
