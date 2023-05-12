@@ -4,9 +4,9 @@ This is the portfolio of python code that I learned during BISC 450C! Overall, I
 
 
 
-## Using Jupyter Notebooks 1 and 2
+## Using Jupyter Notebooks (1)
 
-In this analysis, we looked into different companies statisitcal values based on their year, rank, revenue, and profit.
+In this two part analysis, we looked into different companies statisitcal values based on their year, rank, revenue, and profit.
 
 
 ```python
@@ -409,7 +409,7 @@ bin_sizes, _, _ = plt.hist(df.year[non_numeric_profits], bins= range(1955, 2006)
 ![output_11_0](https://user-images.githubusercontent.com/132538541/236327430-47e5d466-8245-4163-9117-ce1796980eb0.png)
 
 
-
+## Using Jupyter Notebooks (2)
 
 ```python
 df = df.loc[~non_numeric_profits]
