@@ -759,7 +759,7 @@ print(small)
      [1. 1. 0. 1.]
      [2. 2. 1. 1.]]
 
-
+## Analyzing Patient Data (2)
 
 ```python
 # Lets use a numpy function
@@ -856,7 +856,7 @@ print(numpy.mean(data, axis = 1))
      5.925 6.15  6.075 5.75  5.975 5.725 6.3   5.9   6.75  5.925 7.225 6.15
      5.95  6.275 5.7   6.1   6.825 5.975 6.725 5.7   6.25  6.4   7.05  5.9  ]
 
-## Analyzing Patient Data (2)
+## Analyzing Patient Data (3)
 
 ```python
 import numpy
